@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>JavaScript</title>
+</head>
+<body>
+    <h2>Display Object Variables and Array Manipulation</h2>
+    <h3>Object Values</h3>
+    <div id="objectOutput"></div>
+    <h3>Array Values</h3>
+    <div id="arrayOutput"></div>
+    <script>
+        const cars = [
+            { brand: "Ford", model: "Mustang", year: 2020 },
+            { brand: "Chevrolet", model: "Camaro", year: 2021 },
+            { brand: "Dodge", model: "Challenger", year: 2022 }
+        ];
+        let objectOutput = "<ul>";
+        cars.forEach(car => {
+            objectOutput += `<li>Brand: ${car.brand}, Model: ${car.model}, Year: ${car.year}</li>`;
+        });
+        objectOutput += "</ul>";
+        document.getElementById("objectOutput").innerHTML = objectOutput;
+        const carBrands = ["Ford", "Chevrolet", "Dodge", "Toyota", "Honda"];
+        let arrayOutput = "Car Brands:<ul>";
+        for (let i = 0; i < carBrands.length; i++) {
+            arrayOutput += `<li>Index ${i}: ${carBrands[i]}</li>`;
+        }
+        arrayOutput += "</ul>";
+        const joinedBrands = carBrands.join(", ");
+        arrayOutput += `Joined Brands: ${joinedBrands}`;
+        const poppedBrand = carBrands.pop();
+        arrayOutput += `Popped Brand: ${poppedBrand}`;
+        arrayOutput += `Remaining Brands after pop: ${carBrands.join(", ")}`;
+        document.getElementById("arrayOutput").innerHTML = arrayOutput;
+    </script>
+</body>
+</html>
